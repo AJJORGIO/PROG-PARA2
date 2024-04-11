@@ -1,14 +1,8 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.InputMismatchException;
-import java.util.Comparator;
-import java.util.Collections;
-
+import java.util.*;
 public class VehicleManagement {
    public static void main(String[] args) {
       ArrayList<Vehicle> vehicleList = new ArrayList<>();
       Scanner scanner = new Scanner(System.in);
-   
       int choice;
       do {
          try {
@@ -21,20 +15,16 @@ public class VehicleManagement {
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
             scanner.nextLine();
-         
             switch (choice) {
                case 1:
                   addVehicle(vehicleList, scanner);
                   break;
-            
                case 2:
                   displayVehicleList(vehicleList);
                   break;
-            
                case 3:
                   deleteVehicle(vehicleList, scanner);
                   break;
-            
                case 4:
                   // sort vehicle list by age
                   while(true) {
@@ -79,7 +69,6 @@ public class VehicleManagement {
    
       scanner.close();
    }
-
    private static void addVehicle(ArrayList<Vehicle> vehicleList, Scanner scanner) {
       System.out.print("Enter registration number: ");
       String regNo = scanner.nextLine();
@@ -94,7 +83,6 @@ public class VehicleManagement {
       vehicleList.add(vehicle);
       System.out.println("Vehicle added successfully!");
    }
-
    private static void displayVehicleList(ArrayList<Vehicle> vehicleList) {
       if (vehicleList.isEmpty()) {
          System.out.println("No vehicles to display.");
@@ -105,7 +93,6 @@ public class VehicleManagement {
          }
       }
    }
-
    private static void deleteVehicle(ArrayList<Vehicle> vehicleList, Scanner scanner) {
       if (vehicleList.isEmpty()) {
          System.out.println("No vehicles to delete.");
